@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descriere Personală</title>
+    <style>
+        h1 {
+            color: #987465;
+        }
+        body {
+            background-color: #c9b6ae;
+        }
+        img#profile-pic {
+            width: 200px;
+            border-radius: 50%;
+        }
+        p2 {
+            font-family: Cursive, sans-serif;
+            text-align: center;
+            color: #6d7c92;
+        }
+        p1 {
+            color: #A88B8F;
+        }
+        h1 {
+            background-color: lightgrey;
+            width: 300px;
+            border: 15px lightblue;
+            padding: 50px;
+            margin: 20px;
+            text-align: center;
+        }
+        table {
+            text-align: center;
+        }
+        table.center {
+            margin-left: auto; 
+            margin-right: auto;
+        }
+        ul {
+            background: #B0737C;
+            padding: 20px;
+        }
+        ul li {
+            background: #DAD3E8;
+            color: darkblue;
+            margin: 5px;
+        }
+        table, th, td {
+            border: 2px solid black;
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+        #customers td, #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        #customers tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        #customers tr:hover {
+            background-color: #ddd;
+        }
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: center;
+            background-color: #BB4557;
+            color: white;
+        }
+        button {
+            margin: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 id="titlul">Descriere Personală</h1>
+        <p1><strong> Date de identificare</strong> Marian Bianca Ludovica</p1>
+        <p><strong>Date de contact:</strong><i> marianbianca10@yahoo.com</i></p>
+        <h2>Poza: </h2>
+        <img id="profile-pic" src="profile.jpg" alt="Poza: ">
+    </header>
+    <section>
+        <h2>Așteptări și Educație</h2>
+        <blockquote>
+            <p2>
+            <p style="font-size:20px;" id="aspirations">
+                Îmi doresc ca prin educație să acumulez cunoștințe și abilități practice care să îmi permită să evoluez constant, să contribui cu idei inovatoare și să fac o diferență pozitivă în domeniul meu profesional.
+            </p>
+            </p2>
+        </blockquote>
+    </section>
+    <section>
+        <h2>Discipline de Interes</h2>
+        <table id="customers" style="width:65%">
+            <tr>
+                <th>
+                    <h3 style="color:#2f010e;">Denumirea disciplinei</h3>
+                </th>
+                <th>
+                    <h4 style="color:#2f010e;">Anul de studiu</h4>
+                </th>
+                <th> 
+                    <h5 style="color:#2f010e;">Link fisa disciplinei</h5>
+                </th>
+            </tr>
+            <tr>
+                <td> Programarea calculatoarelor si limbaje de programare I-seria B </td>
+                <td> An I </td>
+                <td><a href="https://etti.utcluj.ro/files/Acasa/Site/FiseDisciplina/TstRo/04b.pdf">Fișa disciplinei</a></td>
+            </tr>
+            <tr>
+                <td> Rețele de Calculatoare </td>
+                <td> An I </td>
+                <td><a href="https://etti.utcluj.ro/files/Acasa/Site/FiseDisciplina/TstRo/06.pdf">Fișa disciplinei</a></td>
+            </tr>
+            <tr>
+                <td> Inteligență Artificială </td>
+                <td> An II </td>
+                <td><a href="https://etti.utcluj.ro/planuri-de-invatamant.html">Fișa disciplinei</a></td>
+            </tr>
+        </table>
+    </section>
+    <section>
+        <h2>Hobby-uri și Activități</h2>
+        <ul id="hobbies">
+            <li>Sport</li>
+            <li>Citit</li>
+            <li>Gătit</li>
+            <li>Călătorit</li>
+            <li>Fotografie</li>
+        </ul>
+    </section>
+    <button id="change-life">Alta viață</button>
+    <script>
+        document.getElementById("change-life").addEventListener("click", function () {
+            // Modificare titlu și nume
+            document.getElementById("titlul").textContent = "Visul meu profesional";
+            document.querySelector("p1").textContent = "Inginer Software la Google";
+            
+
+            // Modificare aspirații
+            document.getElementById("aspirations").textContent = "Vreau să dezvolt tehnologii inovatoare care să aibă un impact pozitiv în lume.";
+
+            // Modificare hobby-uri
+            const hobbiesList = document.getElementById("hobbies");
+            hobbiesList.innerHTML = `
+                <li>Scufundări</li>
+                <li>Escaladă</li>
+                <li>Scrierea de articole tehnice</li>
+                <li>Explorarea AI</li>
+                <li>Jocuri de strategie</li>
+            `;
+
+            // Modificare imagine de profil
+            const profilePic = document.getElementById("profile-pic");
+            profilePic.src = "profile_alt.jpg"; // Imagine alternativă
+            profilePic.style.border = "10px solid #FF5722";
+            profilePic.style.opacity = "0.8";
+
+            // Modificare stil general
+            document.body.style.backgroundColor = "#34495E";
+            document.body.style.color = "#ECF0F1";
+        });
+    </script>
+</body>
+</html>
